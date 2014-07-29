@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+    
+	<services>
+        <service id="zebba.logger.null_logger"
+            class="Psr\Logging\NullLogger" />
+    
+        <service id="zebba.form_handler.handler_factory"
+            class="Zebba\Bundle\Form\Handler\FormHandlerFactory">
+            <argument type="service" id="form.factory" />
+            <argument type="service" id="zebba.logger.null_logger" />
+        </service>
+    </services>
+</container>
