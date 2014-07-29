@@ -1,0 +1,28 @@
+{
+    "name": "zebba/formhandler-bundle",
+    "type": "zebba-bundle",
+    "description": "Zebba FormHandlerBundle",
+    "keywords": [],
+    "homepage": "https://github.com/zebba/FormHandlerBundle",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Sebastian Kuhlmann",
+            "email": "zebba@hotmail.de"
+        }
+    ],
+    "require": {
+        "php": ">=5.3.1",
+        "zebba/form" : "dev-master"
+    },
+    "autoload": {
+        "psr-0": { "Zebba\\Bundle\\FormHandlerBundle\\": "" }
+    },
+    "target-dir": "Zebba/Bundle/FormHandlerBundle",
+    "minimum-stability": "dev",
+    "extra": {
+        "branch-alias": {
+            "dev-master": "master"
+        }
+    }
+}
