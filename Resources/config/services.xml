@@ -8,7 +8,7 @@
             class="Psr\Logging\NullLogger" />
     
         <service id="zebba.form_handler.handler_factory"
-            class="Zebba\Bundle\Form\Handler\FormHandlerFactory">
+            class="Zebba\Component\Form\Handler\FormHandlerFactory">
             <argument type="service" id="form.factory" />
             <argument type="service" id="zebba.logger.null_logger" />
         </service>
