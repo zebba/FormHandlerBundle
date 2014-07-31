@@ -5,7 +5,7 @@
     
 	<services>
         <service id="zebba.logger.null_logger"
-            class="Psr\Logging\NullLogger" />
+            class="Psr\Log\NullLogger" />
     
         <service id="zebba.form_handler.handler_factory"
             class="Zebba\Component\Form\Handler\FormHandlerFactory">
