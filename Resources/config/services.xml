@@ -1,22 +1,23 @@
 <?xml version="1.0" encoding="UTF-8"?>
+
 <container xmlns="http://symfony.com/schema/dic/services"
     xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
     
+    <parameters>
+        <parameter key="zebba.form_handler.form_handler_factory.class">Zebba\Bundle\FormHandlerBundle\Factory\FormHandlerFactory</parameter>
+        <parameter key="zebba.form_handler.service.form_factory">form.factory</parameter>
+        <parameter key="zebba.form_handler.service.logger">zebba.form_handler.null_logger</parameter>
+    </parameters>
+    
 	<services>
-        <service id="zebba.logger.null_logger"
+        <service id="zebba.form_handler.null_logger" public="false"
             class="Psr\Log\NullLogger" />
     
         <service id="zebba.form_handler.form_handler_factory"
-            class="Zebba\Component\Form\Handler\FormHandlerFactory">
-            <argument type="service" id="form.factory" />
-            <argument type="service" id="zebba.logger.null_logger" />
-        </service>
-
-        <service id="zebba.form_handler.filter_handler_factory"
-            class="Zebba\Component\Form\Handler\FilterHandlerFactory">
-            <argument type="service" id="form.factory" />
-            <argument type="service" id="zebba.logger.null_logger" />
+            class="%zebba.form_handler.form_handler_factory.class%">
+            <argument>%zebba.form_handler.service.form_factory%</argument>
+            <argument>%zebba.form_handler.service.logger%</argument>
         </service>
     </services>
 </container>
