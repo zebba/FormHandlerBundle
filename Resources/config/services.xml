@@ -5,19 +5,19 @@
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
     
     <parameters>
-        <parameter key="zebba.form_handler.form_handler_factory.class">Zebba\Bundle\FormHandlerBundle\Factory\FormHandlerFactory</parameter>
-        <parameter key="zebba.form_handler.service.form_factory">form.factory</parameter>
-        <parameter key="zebba.form_handler.service.logger">zebba.form_handler.null_logger</parameter>
+        <parameter key="zebba_form_handler.form_handler_factory.class">Zebba\Bundle\FormHandlerBundle\Factory\FormHandlerFactory</parameter>
+        <parameter key="zebba_form_handler.service.form_factory">form.factory</parameter>
+        <parameter key="zebba_form_handler.service.logger">zebba.form_handler.null_logger</parameter>
     </parameters>
     
 	<services>
-        <service id="zebba.form_handler.null_logger" public="false"
+        <service id="zebba_form_handler.null_logger" public="false"
             class="Psr\Log\NullLogger" />
     
-        <service id="zebba.form_handler.form_handler_factory"
-            class="%zebba.form_handler.form_handler_factory.class%">
-            <argument>%zebba.form_handler.service.form_factory%</argument>
-            <argument>%zebba.form_handler.service.logger%</argument>
+        <service id="zebba_form_handler.form_handler_factory"
+            class="%zebba_form_handler.form_handler_factory.class%">
+            <argument>%zebba_form_handler.service.form_factory%</argument>
+            <argument>%zebba_form_handler.service.logger%</argument>
         </service>
     </services>
 </container>
