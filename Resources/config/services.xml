@@ -9,17 +9,11 @@
     </parameters>
     
     <services>
-        <service id="zebba_form_handler.service.logger" alias="logger.null_logger" />
-   
-        <service id="logger.null_logger" public="false"
-            class="Psr\Log\NullLogger" />
-   
-        <service id="zebba_form_handler.service.form_factory" alias="form.factory" />
+        <service id="zebba_form_handler.service.form_factory" alias="form.factory" public="false" />
    
         <service id="zebba_form_handler.form_handler_factory"
             class="%zebba_form_handler.form_handler_factory.class%">
             <argument type="service" id="zebba_form_handler.service.form_factory" />
-            <argument type="service" id="zebba_form_handler.service.logger" />
         </service>        
     </services>
 </container>
